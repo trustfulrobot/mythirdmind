@@ -31,6 +31,13 @@ module.exports = {
         url: `http://patrickmorrissey.com/feed/`,
         name: `PatrickMorrissey`,
       }
+    },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `http://www.kentuckytheater.com/feed/`,
+        name: `KentuckyTheater`,
+      }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
