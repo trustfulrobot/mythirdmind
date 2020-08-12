@@ -23,10 +23,10 @@ function IndexPage({ data }) {
 	// const source_PatrickMorrissey = "test";
 	console.log(data.allFeedPatrickMorrissey.edges);
 
-	const source_PatrickMorrissey = data.allFeedPatrickMorrissey.edges.map(function(node, index){
+	const source_PatrickMorrissey = data.allFeedPatrickMorrissey.edges.map(function(post, index){
 		return (
 			<li key={index}>
-				{node.node.title}
+				{post.node.title}
 			</li>
 		)
 	})
