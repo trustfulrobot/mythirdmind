@@ -20,9 +20,6 @@ export const feedPatrickMorrissey = graphql`
 
 function IndexPage({ data }) {
 
-	// const source_PatrickMorrissey = "test";
-	console.log(data.allFeedPatrickMorrissey.edges);
-
 	const source_PatrickMorrissey = data.allFeedPatrickMorrissey.edges.map(function(post, index){
 		return (
 			<li key={index}>
@@ -30,9 +27,6 @@ function IndexPage({ data }) {
 			</li>
 		)
 	})
-
-
-	// const source_PatrickMorrissey = "test";
 
 	return (
 		<div id="MyThirdMind">
