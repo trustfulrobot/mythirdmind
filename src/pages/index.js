@@ -27,6 +27,19 @@ export const feedPatrickMorrissey = graphql`
 	        title
 	      }
 	    }
+	  },
+
+		allFeedHighSnobiety {
+	    edges {
+	      node {
+	        content {
+	          encoded
+	        }
+	        id
+	        link
+	        title
+	      }
+	    }
 	  }
 	}
 `
@@ -43,6 +56,8 @@ function stripTags(content) {
 }
 
 function IndexPage({ data }) {
+
+	console.log(data.allFeedPatrickMorrissey.edges);
 
 	const source_PatrickMorrissey = data.allFeedPatrickMorrissey.edges.map(function(post, index){
 		const sourceID = post.node.id;
