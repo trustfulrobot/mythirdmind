@@ -1,5 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { stripTags } from "voca";
+import { he } from "he";
 
 export const feedPatrickMorrissey = graphql`
 	{
@@ -57,19 +59,26 @@ export const feedPatrickMorrissey = graphql`
 	}
 `
 
+function decodeHTML(str) {
+	return str.replace(/&#(\d+);/g, function(match, dec) {
+    return String.fromCharCode(dec);
+  });
+}
+
 function IndexPage({ data }) {
 
 
 	const source_PatrickMorrissey = data.allFeedPatrickMorrissey.edges.map(function(post, index){
 		const sourceID = post.node.id;
-		// const sourceTitle = stripTags(post.node.title);
-		const sourceTitle = post.node.title;
+		const sourceTitle = stripTags(post.node.title);
+		// const sourceTitle = post.node.title;
 		const sourceLink = post.node.link;
-		// const sourceContent = stripTags(post.node.content.encoded);
-		const sourceContent = post.node.content.encoded;
+		const sourceContent = stripTags(post.node.content.encoded);
+		const sourceContentDecoded = decodeHTML(sourceContent);
+		// const sourceContent = post.node.content.encoded;
 		return (
 			<li key={sourceID}>
-				{sourceTitle}
+				{sourceContentDecoded}
 			</li>
 		)
 	});
