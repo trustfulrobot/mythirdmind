@@ -40,6 +40,19 @@ export const feedPatrickMorrissey = graphql`
 	        title
 	      }
 	    }
+	  },
+
+		allFeedBoingBoing {
+	    edges {
+	      node {
+	        content {
+	          encoded
+	        }
+	        id
+	        link
+	        title
+	      }
+	    }
 	  }
 	}
 `
