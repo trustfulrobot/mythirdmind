@@ -52,6 +52,62 @@ module.exports = {
         url: `http://feeds.boingboing.net/boingboing/iBag`,
         name: `BoingBoing`,
       }
+    },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://aiweirdness.com/rss`,
+        name: `AiWeirdness`,
+      }
+    },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `http://feeds2.feedburner.com/creativeapplicationsnet`,
+        name: `CreativeApplications`,
+      }
+    },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `http://www.entagma.com/feed/`,
+        name: `Entagma`,
+      }
+    },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `http://pitchfork.com/rss/news/`,
+        name: `Pitchfork`,
+      }
+    },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `http://feeds.arstechnica.com/arstechnica/index/`,
+        name: `ArsTechnica`,
+      }
+    },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `http://feedproxy.google.com/TechCrunch`,
+        name: `TechCrunch`,
+      }
+    },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://tympanus.net/codrops/feed/`,
+        name: `Codrops`,
+      }
+    },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `http://feeds.feedburner.com/CssTricks`,
+        name: `CSSTricks`,
+      }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

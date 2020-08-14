@@ -1,7 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { stripTags } from "voca";
-import { he } from "he";
 
 export const feedPatrickMorrissey = graphql`
 	{
@@ -45,6 +44,102 @@ export const feedPatrickMorrissey = graphql`
 	  },
 
 		allFeedBoingBoing {
+	    edges {
+	      node {
+	        content {
+	          encoded
+	        }
+	        id
+	        link
+	        title
+	      }
+	    }
+	  },
+
+		allFeedAiWeirdness {
+	    edges {
+	      node {
+	        content
+	        id
+	        link
+	        title
+	      }
+	    }
+	  },
+
+		allFeedCreativeApplications {
+	    edges {
+	      node {
+	        content
+	        id
+	        link
+	        title
+	      }
+	    }
+	  },
+
+		allFeedEntagma {
+	    edges {
+	      node {
+	        content
+	        id
+	        link
+	        title
+	      }
+	    }
+	  },
+
+		allFeedPitchfork {
+	    edges {
+	      node {
+	        content
+	        id
+	        link
+	        title
+	      }
+	    }
+	  },
+
+		allFeedArsTechnica {
+	    edges {
+	      node {
+	        content {
+	          encoded
+	        }
+	        id
+	        link
+	        title
+	      }
+	    }
+	  },
+
+		allFeedTechCrunch {
+	    edges {
+	      node {
+	        content {
+	          encoded
+	        }
+	        id
+	        link
+	        title
+	      }
+	    }
+	  },
+
+		allFeedCodrops {
+	    edges {
+	      node {
+	        content {
+	          encoded
+	        }
+	        id
+	        link
+	        title
+	      }
+	    }
+	  },
+
+		allFeedCssTricks {
 	    edges {
 	      node {
 	        content {
