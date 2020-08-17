@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { stripTags } from "voca";
+import { Chance } from "chance";
 
 export const feedPatrickMorrissey = graphql`
 	{
@@ -162,6 +163,7 @@ function decodeHTML(str) {
 
 function IndexPage({ data }) {
 
+	const chance = new Chance();
 	let sources = [];
 
 	const source_PatrickMorrissey = data.allFeedPatrickMorrissey.edges.map(function(post, index){
@@ -349,12 +351,17 @@ function IndexPage({ data }) {
 	Array.from(source_Codrops).forEach(addSource);
 	Array.from(source_CSSTricks).forEach(addSource);
 
+	function pickSources(){
+		const sourcesLen = sources.length;
+		const sourceNum = chance.integer({min: 3, max: 5});
+		const sourceIndices = chance.unique(chance.integer, sourceNum, {min: 1, max: sourcesLen});
+		return sourceIndices;
+	}
+
 	return (
 		<div id="MyThirdMind">
-			<h1>Here we go</h1>
-			<ul>
-				test
-			</ul>
+			<h1>My Third Mind</h1>
+			<ul id="cutups"></ul>
 		</div>
 	)
 }
