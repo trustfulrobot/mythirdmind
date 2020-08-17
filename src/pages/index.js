@@ -358,6 +358,23 @@ function IndexPage({ data }) {
 		return sourceIndices;
 	}
 
+	function generateCutups(num){
+		let i = 0;
+		while (i < num) {
+			const sourceIDs = pickSources();
+			const sourceNum = sourceIDs.length;
+			let cutupSources = [];
+			let j = 0;
+			while (j < sourceNum) {
+				let currentSource = sources[sourceIDs[j]];
+				cutupSources.push(currentSource);
+				j++;
+			}
+			i++;
+		}
+	}
+	generateCutups(10);
+
 	return (
 		<div id="MyThirdMind">
 			<h1>My Third Mind</h1>
