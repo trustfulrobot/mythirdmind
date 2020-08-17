@@ -170,20 +170,190 @@ function IndexPage({ data }) {
 		const sourceLink = post.node.link;
 		const sourceContent = stripTags(post.node.content.encoded);
 		const sourceContentDecoded = decodeHTML(sourceContent);
-		return (
-			<li key={sourceID}>
-				{sourceContentDecoded}
-			</li>
-		)
+		return {
+			id: sourceID,
+			source: "Patrick Morrissey",
+			title: sourceTitle,
+			content: sourceContentDecoded,
+			link: sourceLink
+		}
+	});
+	const source_KentuckyTheater = data.allFeedKentuckyTheater.edges.map(function(post, index){
+		const sourceID = post.node.id;
+		const sourceTitle = stripTags(post.node.title);
+		const sourceLink = post.node.link;
+		const sourceContent = stripTags(post.node.content.encoded);
+		const sourceContentDecoded = decodeHTML(sourceContent);
+		return {
+			id: sourceID,
+			source: "Kentucky Theater",
+			title: sourceTitle,
+			content: sourceContentDecoded,
+			link: sourceLink
+		}
+	});
+	const source_HighSnobiety = data.allFeedHighSnobiety.edges.map(function(post, index){
+		const sourceID = post.node.id;
+		const sourceTitle = stripTags(post.node.title);
+		const sourceLink = post.node.link;
+		const sourceContent = stripTags(post.node.content.encoded);
+		const sourceContentDecoded = decodeHTML(sourceContent);
+		return {
+			id: sourceID,
+			source: "High Snobiety",
+			title: sourceTitle,
+			content: sourceContentDecoded,
+			link: sourceLink
+		}
+	});
+	const source_BoingBoing = data.allFeedBoingBoing.edges.map(function(post, index){
+		const sourceID = post.node.id;
+		const sourceTitle = stripTags(post.node.title);
+		const sourceLink = post.node.link;
+		const sourceContent = stripTags(post.node.content.encoded);
+		const sourceContentDecoded = decodeHTML(sourceContent);
+		return {
+			id: sourceID,
+			source: "Boing Boing",
+			title: sourceTitle,
+			content: sourceContentDecoded,
+			link: sourceLink
+		}
+	});
+	const source_AiWeirdness = data.allFeedAiWeirdness.edges.map(function(post, index){
+		const sourceID = post.node.id;
+		const sourceTitle = stripTags(post.node.title);
+		const sourceLink = post.node.link;
+		const sourceContent = stripTags(post.node.content);
+		const sourceContentDecoded = decodeHTML(sourceContent);
+		return {
+			id: sourceID,
+			source: "AI Weirdness",
+			title: sourceTitle,
+			content: sourceContentDecoded,
+			link: sourceLink
+		}
+	});
+	const source_CreativeApplications = data.allFeedCreativeApplications.edges.map(function(post, index){
+		const sourceID = post.node.id;
+		const sourceTitle = stripTags(post.node.title);
+		const sourceLink = post.node.link;
+		const sourceContent = stripTags(post.node.content);
+		const sourceContentDecoded = decodeHTML(sourceContent);
+		return {
+			id: sourceID,
+			source: "Creative Applications",
+			title: sourceTitle,
+			content: sourceContentDecoded,
+			link: sourceLink
+		}
+	});
+	const source_Entagma = data.allFeedEntagma.edges.map(function(post, index){
+		const sourceID = post.node.id;
+		const sourceTitle = stripTags(post.node.title);
+		const sourceLink = post.node.link;
+		const sourceContent = stripTags(post.node.content);
+		const sourceContentDecoded = decodeHTML(sourceContent);
+		return {
+			id: sourceID,
+			source: "Entagma",
+			title: sourceTitle,
+			content: sourceContentDecoded,
+			link: sourceLink
+		}
+	});
+	const source_Pitchfork = data.allFeedPitchfork.edges.map(function(post, index){
+		const sourceID = post.node.id;
+		const sourceTitle = stripTags(post.node.title);
+		const sourceLink = post.node.link;
+		const sourceContent = stripTags(post.node.content);
+		const sourceContentDecoded = decodeHTML(sourceContent);
+		return {
+			id: sourceID,
+			source: "Pitchfork",
+			title: sourceTitle,
+			content: sourceContentDecoded,
+			link: sourceLink
+		}
+	});
+	const source_ArsTechnica = data.allFeedArsTechnica.edges.map(function(post, index){
+		const sourceID = post.node.id;
+		const sourceTitle = stripTags(post.node.title);
+		const sourceLink = post.node.link;
+		const sourceContent = stripTags(post.node.content.encoded);
+		const sourceContentDecoded = decodeHTML(sourceContent);
+		return {
+			id: sourceID,
+			source: "Ars Technica",
+			title: sourceTitle,
+			content: sourceContentDecoded,
+			link: sourceLink
+		}
+	});
+	const source_TechCrunch = data.allFeedTechCrunch.edges.map(function(post, index){
+		const sourceID = post.node.id;
+		const sourceTitle = stripTags(post.node.title);
+		const sourceLink = post.node.link;
+		const sourceContent = stripTags(post.node.content.encoded);
+		const sourceContentDecoded = decodeHTML(sourceContent);
+		return {
+			id: sourceID,
+			source: "Tech Crunch",
+			title: sourceTitle,
+			content: sourceContentDecoded,
+			link: sourceLink
+		}
+	});
+	const source_Codrops = data.allFeedCodrops.edges.map(function(post, index){
+		const sourceID = post.node.id;
+		const sourceTitle = stripTags(post.node.title);
+		const sourceLink = post.node.link;
+		const sourceContent = stripTags(post.node.content.encoded);
+		const sourceContentDecoded = decodeHTML(sourceContent);
+		return {
+			id: sourceID,
+			source: "Codrops",
+			title: sourceTitle,
+			content: sourceContentDecoded,
+			link: sourceLink
+		}
+	});
+	const source_CSSTricks = data.allFeedCssTricks.edges.map(function(post, index){
+		const sourceID = post.node.id;
+		const sourceTitle = stripTags(post.node.title);
+		const sourceLink = post.node.link;
+		const sourceContent = stripTags(post.node.content.encoded);
+		const sourceContentDecoded = decodeHTML(sourceContent);
+		return {
+			id: sourceID,
+			source: "CSS Tricks",
+			title: sourceTitle,
+			content: sourceContentDecoded,
+			link: sourceLink
+		}
 	});
 
-	console.log(data);
+	function addSource(source){
+		sources.push(source);
+	}
+	Array.from(source_PatrickMorrissey).forEach(addSource);
+	Array.from(source_KentuckyTheater).forEach(addSource);
+	Array.from(source_HighSnobiety).forEach(addSource);
+	Array.from(source_BoingBoing).forEach(addSource);
+	Array.from(source_AiWeirdness).forEach(addSource);
+	Array.from(source_CreativeApplications).forEach(addSource);
+	Array.from(source_Entagma).forEach(addSource);
+	Array.from(source_Pitchfork).forEach(addSource);
+	Array.from(source_ArsTechnica).forEach(addSource);
+	Array.from(source_TechCrunch).forEach(addSource);
+	Array.from(source_Codrops).forEach(addSource);
+	Array.from(source_CSSTricks).forEach(addSource);
 
 	return (
 		<div id="MyThirdMind">
 			<h1>Here we go</h1>
 			<ul>
-				{source_PatrickMorrissey}
+				test
 			</ul>
 		</div>
 	)
