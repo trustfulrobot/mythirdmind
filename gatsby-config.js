@@ -106,7 +106,7 @@ module.exports = {
       resolve: `gatsby-source-rss-feed`,
       options: {
         url: `http://feeds.feedburner.com/CssTricks`,
-        name: `CSSTricks`,
+        name: `CssTricks`,
       }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality

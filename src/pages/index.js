@@ -4,7 +4,7 @@ import { stripTags } from "voca";
 
 export const feedPatrickMorrissey = graphql`
 	{
-		allFeedPatrickMorrissey {
+		allFeedPatrickMorrissey(limit: 10) {
 	    edges {
 	      node {
 	        content {
@@ -17,7 +17,7 @@ export const feedPatrickMorrissey = graphql`
 	    }
 	  },
 
-		allFeedKentuckyTheater {
+		allFeedKentuckyTheater(limit: 10) {
 	    edges {
 	      node {
 	        content {
@@ -30,7 +30,7 @@ export const feedPatrickMorrissey = graphql`
 	    }
 	  },
 
-		allFeedHighSnobiety {
+		allFeedHighSnobiety(limit: 10) {
 	    edges {
 	      node {
 	        content {
@@ -43,7 +43,7 @@ export const feedPatrickMorrissey = graphql`
 	    }
 	  },
 
-		allFeedBoingBoing {
+		allFeedBoingBoing(limit: 10) {
 	    edges {
 	      node {
 	        content {
@@ -56,7 +56,7 @@ export const feedPatrickMorrissey = graphql`
 	    }
 	  },
 
-		allFeedAiWeirdness {
+		allFeedAiWeirdness(limit: 10) {
 	    edges {
 	      node {
 	        content
@@ -67,7 +67,7 @@ export const feedPatrickMorrissey = graphql`
 	    }
 	  },
 
-		allFeedCreativeApplications {
+		allFeedCreativeApplications(limit: 10) {
 	    edges {
 	      node {
 	        content
@@ -78,7 +78,7 @@ export const feedPatrickMorrissey = graphql`
 	    }
 	  },
 
-		allFeedEntagma {
+		allFeedEntagma(limit: 10) {
 	    edges {
 	      node {
 	        content
@@ -89,7 +89,7 @@ export const feedPatrickMorrissey = graphql`
 	    }
 	  },
 
-		allFeedPitchfork {
+		allFeedPitchfork(limit: 10) {
 	    edges {
 	      node {
 	        content
@@ -100,7 +100,7 @@ export const feedPatrickMorrissey = graphql`
 	    }
 	  },
 
-		allFeedArsTechnica {
+		allFeedArsTechnica(limit: 10) {
 	    edges {
 	      node {
 	        content {
@@ -113,7 +113,7 @@ export const feedPatrickMorrissey = graphql`
 	    }
 	  },
 
-		allFeedTechCrunch {
+		allFeedTechCrunch(limit: 10) {
 	    edges {
 	      node {
 	        content {
@@ -126,7 +126,7 @@ export const feedPatrickMorrissey = graphql`
 	    }
 	  },
 
-		allFeedCodrops {
+		allFeedCodrops(limit: 10) {
 	    edges {
 	      node {
 	        content {
@@ -139,7 +139,7 @@ export const feedPatrickMorrissey = graphql`
 	    }
 	  },
 
-		allFeedCssTricks {
+		allFeedCssTricks(limit: 10) {
 	    edges {
 	      node {
 	        content {
@@ -162,21 +162,22 @@ function decodeHTML(str) {
 
 function IndexPage({ data }) {
 
+	let sources = [];
 
 	const source_PatrickMorrissey = data.allFeedPatrickMorrissey.edges.map(function(post, index){
 		const sourceID = post.node.id;
 		const sourceTitle = stripTags(post.node.title);
-		// const sourceTitle = post.node.title;
 		const sourceLink = post.node.link;
 		const sourceContent = stripTags(post.node.content.encoded);
 		const sourceContentDecoded = decodeHTML(sourceContent);
-		// const sourceContent = post.node.content.encoded;
 		return (
 			<li key={sourceID}>
 				{sourceContentDecoded}
 			</li>
 		)
 	});
+
+	console.log(data);
 
 	return (
 		<div id="MyThirdMind">
