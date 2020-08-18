@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { stripTags } from "voca";
+import { stripTags, slice, substring, indexOf, lastIndexOf, words } from "voca";
 import { Chance } from "chance";
 
 export const feedPatrickMorrissey = graphql`
@@ -353,27 +353,46 @@ function IndexPage({ data }) {
 
 	function pickSources(){
 		const sourcesLen = sources.length;
-		const sourceNum = chance.integer({min: 3, max: 5});
-		const sourceIndices = chance.unique(chance.integer, sourceNum, {min: 1, max: sourcesLen});
-		return sourceIndices;
+		const sourcesNum = chance.integer({min: 3, max: 5});
+		const sourceIDs = chance.unique(chance.integer, sourcesNum, {min: 0, max: sourcesLen - 1});
+		return sourceIDs;
 	}
 
 	function generateCutups(num){
 		let i = 0;
+		const cutupLen = 180;
 		while (i < num) {
 			const sourceIDs = pickSources();
-			const sourceNum = sourceIDs.length;
+			const sourcesNum = sourceIDs.length;
+			const fragmentLen	= Math.floor(cutupLen/sourcesNum);
 			let cutupSources = [];
 			let j = 0;
-			while (j < sourceNum) {
+			while (j < sourcesNum) {
 				let currentSource = sources[sourceIDs[j]];
-				cutupSources.push(currentSource);
+				const currentSourceContent = currentSource.content;
+				// make sure fragment will be long enough when truncated
+				const currentSourceLen = currentSourceContent.length - fragmentLen;
+				if (currentSourceLen > 0) {							
+					const fragmentIndex = chance.integer({min: 0, max: currentSourceLen});
+					let fragment = slice(currentSourceContent, fragmentIndex, fragmentIndex + fragmentLen);	
+					// replace line breaks with a space
+					// fragment = fragment.replace(/(\r\n|\n|\r)/gm," ");
+					const fragmentWords = words(fragment);
+					// remove first and last words bc they may be partial
+					fragmentWords.shift();
+					fragmentWords.pop();
+					currentSource.content = fragmentWords.join(" ");	
+					cutupSources.push(currentSource);
+				}
 				j++;
+			}
+			if (cutupSources.length > 2) {
+				console.log(cutupSources);
 			}
 			i++;
 		}
 	}
-	generateCutups(10);
+	generateCutups(100);
 
 	return (
 		<div id="MyThirdMind">
