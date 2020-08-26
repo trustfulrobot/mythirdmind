@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { stripTags, slice, substring, indexOf, lastIndexOf, words } from "voca";
+import { stripTags, slice, words } from "voca";
 import { Chance } from "chance";
 
 export const feedPatrickMorrissey = graphql`
@@ -441,12 +441,19 @@ function IndexPage({ data }) {
 				j++;
 			}
 			if (cutupSources.length > 2) {
-				console.log(cutupSources);
+				// let cutupDiv = document.createElement('li');
+				let cutupContent = "";
+				cutupSources.forEach(function(cutupSource){
+					cutupContent = cutupContent + cutupSource.content + " ";
+				})
+				cutupContent = cutupContent.trim();
+				// cutupDiv.innerHTML = cutupContent;
+				// document.getElementById('cutups').appendChild(cutupDiv);
 			}
 			i++;
 		}
 	}
-	generateCutups(100);
+	generateCutups(10);
 
 	return (
 		<div id="MyThirdMind">
