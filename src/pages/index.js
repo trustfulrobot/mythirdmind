@@ -101,6 +101,19 @@ export const feedPatrickMorrissey = graphql`
 	    }
 	  },
 
+		allFeedStereogum(limit: 10) {
+	    edges {
+	      node {
+	        content {
+	        	encoded
+	        }
+	        id
+	        link
+	        title
+	      }
+	    }
+	  },
+
 		allFeedArsTechnica(limit: 10) {
 	    edges {
 	      node {
@@ -120,6 +133,17 @@ export const feedPatrickMorrissey = graphql`
 	        content {
 	          encoded
 	        }
+	        id
+	        link
+	        title
+	      }
+	    }
+	  },
+
+		allFeedCoLabs(limit: 10) {
+	    edges {
+	      node {
+	        content
 	        id
 	        link
 	        title
@@ -278,6 +302,20 @@ function IndexPage({ data }) {
 			link: sourceLink
 		}
 	});
+	const source_Stereogum = data.allFeedStereogum.edges.map(function(post, index){
+		const sourceID = post.node.id;
+		const sourceTitle = stripTags(post.node.title);
+		const sourceLink = post.node.link;
+		const sourceContent = stripTags(post.node.content.encoded);
+		const sourceContentDecoded = decodeHTML(sourceContent);
+		return {
+			id: sourceID,
+			source: "Stereogum",
+			title: sourceTitle,
+			content: sourceContentDecoded,
+			link: sourceLink
+		}
+	});
 	const source_ArsTechnica = data.allFeedArsTechnica.edges.map(function(post, index){
 		const sourceID = post.node.id;
 		const sourceTitle = stripTags(post.node.title);
@@ -301,6 +339,20 @@ function IndexPage({ data }) {
 		return {
 			id: sourceID,
 			source: "Tech Crunch",
+			title: sourceTitle,
+			content: sourceContentDecoded,
+			link: sourceLink
+		}
+	});
+	const source_CoLabs = data.allFeedCoLabs.edges.map(function(post, index){
+		const sourceID = post.node.id;
+		const sourceTitle = stripTags(post.node.title);
+		const sourceLink = post.node.link;
+		const sourceContent = stripTags(post.node.content);
+		const sourceContentDecoded = decodeHTML(sourceContent);
+		return {
+			id: sourceID,
+			source: "CoLabs",
 			title: sourceTitle,
 			content: sourceContentDecoded,
 			link: sourceLink
@@ -346,8 +398,10 @@ function IndexPage({ data }) {
 	Array.from(source_CreativeApplications).forEach(addSource);
 	Array.from(source_Entagma).forEach(addSource);
 	Array.from(source_Pitchfork).forEach(addSource);
+	Array.from(source_Stereogum).forEach(addSource);
 	Array.from(source_ArsTechnica).forEach(addSource);
 	Array.from(source_TechCrunch).forEach(addSource);
+	Array.from(source_CoLabs).forEach(addSource);
 	Array.from(source_Codrops).forEach(addSource);
 	Array.from(source_CSSTricks).forEach(addSource);
 

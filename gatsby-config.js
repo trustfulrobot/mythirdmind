@@ -84,8 +84,22 @@ module.exports = {
     {
       resolve: `gatsby-source-rss-feed`,
       options: {
+        url: `https://www.stereogum.com/feed/`,
+        name: `Stereogum`,
+      }
+    },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
         url: `http://feeds.arstechnica.com/arstechnica/index/`,
         name: `ArsTechnica`,
+      }
+    },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `http://www.fastcolabs.com/rss.xml`,
+        name: `CoLabs`,
       }
     },
     {
