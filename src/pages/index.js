@@ -5,7 +5,7 @@ import { Chance } from "chance";
 
 export const feedPatrickMorrissey = graphql`
 	{
-		allFeedPatrickMorrissey(limit: 10) {
+		allFeedPatrickMorrissey(limit: 25) {
 	    edges {
 	      node {
 	        content {
@@ -18,7 +18,7 @@ export const feedPatrickMorrissey = graphql`
 	    }
 	  },
 
-		allFeedKentuckyTheater(limit: 10) {
+		allFeedKentuckyTheater(limit: 25) {
 	    edges {
 	      node {
 	        content {
@@ -31,7 +31,7 @@ export const feedPatrickMorrissey = graphql`
 	    }
 	  },
 
-		allFeedHighSnobiety(limit: 10) {
+		allFeedHighSnobiety(limit: 25) {
 	    edges {
 	      node {
 	        content {
@@ -44,7 +44,7 @@ export const feedPatrickMorrissey = graphql`
 	    }
 	  },
 
-		allFeedBoingBoing(limit: 10) {
+		allFeedBoingBoing(limit: 25) {
 	    edges {
 	      node {
 	        content {
@@ -57,7 +57,7 @@ export const feedPatrickMorrissey = graphql`
 	    }
 	  },
 
-		allFeedAiWeirdness(limit: 10) {
+		allFeedAiWeirdness(limit: 25) {
 	    edges {
 	      node {
 	        content
@@ -68,7 +68,7 @@ export const feedPatrickMorrissey = graphql`
 	    }
 	  },
 
-		allFeedCreativeApplications(limit: 10) {
+		allFeedCreativeApplications(limit: 25) {
 	    edges {
 	      node {
 	        content
@@ -79,7 +79,7 @@ export const feedPatrickMorrissey = graphql`
 	    }
 	  },
 
-		allFeedEntagma(limit: 10) {
+		allFeedEntagma(limit: 25) {
 	    edges {
 	      node {
 	        content
@@ -90,7 +90,7 @@ export const feedPatrickMorrissey = graphql`
 	    }
 	  },
 
-		allFeedPitchfork(limit: 10) {
+		allFeedPitchfork(limit: 25) {
 	    edges {
 	      node {
 	        content
@@ -101,7 +101,7 @@ export const feedPatrickMorrissey = graphql`
 	    }
 	  },
 
-		allFeedStereogum(limit: 10) {
+		allFeedStereogum(limit: 25) {
 	    edges {
 	      node {
 	        content {
@@ -114,7 +114,7 @@ export const feedPatrickMorrissey = graphql`
 	    }
 	  },
 
-		allFeedArsTechnica(limit: 10) {
+		allFeedArsTechnica(limit: 25) {
 	    edges {
 	      node {
 	        content {
@@ -127,7 +127,7 @@ export const feedPatrickMorrissey = graphql`
 	    }
 	  },
 
-		allFeedTechCrunch(limit: 10) {
+		allFeedTechCrunch(limit: 25) {
 	    edges {
 	      node {
 	        content {
@@ -140,7 +140,7 @@ export const feedPatrickMorrissey = graphql`
 	    }
 	  },
 
-		allFeedCoLabs(limit: 10) {
+		allFeedCoLabs(limit: 25) {
 	    edges {
 	      node {
 	        content
@@ -151,7 +151,7 @@ export const feedPatrickMorrissey = graphql`
 	    }
 	  },
 
-		allFeedCodrops(limit: 10) {
+		allFeedCodrops(limit: 25) {
 	    edges {
 	      node {
 	        content {
@@ -164,7 +164,7 @@ export const feedPatrickMorrissey = graphql`
 	    }
 	  },
 
-		allFeedCssTricks(limit: 10) {
+		allFeedCssTricks(limit: 25) {
 	    edges {
 	      node {
 	        content {
