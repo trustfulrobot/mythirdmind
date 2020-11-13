@@ -2,7 +2,7 @@ import React, { useState} from "react";
 import { graphql } from "gatsby";
 import { stripTags, slice, words } from "voca";
 import { Chance } from "chance";
-// import he from "he";
+import he from "he";
 
 export const feedPatrickMorrissey = graphql`
 	{
@@ -57,17 +57,6 @@ export const feedPatrickMorrissey = graphql`
 	  },
 
 		allFeedCreativeApplications(limit: 25) {
-	    edges {
-	      node {
-	        content
-	        id
-	        link
-	        title
-	      }
-	    }
-	  },
-
-		allFeedEntagma(limit: 25) {
 	    edges {
 	      node {
 	        content
@@ -184,10 +173,9 @@ function IndexPage({ data }) {
 		const sourceID = post.node.id;
 		const sourceTitle = stripTags(post.node.title);
 		const sourceLink = post.node.link;
-		// const sourceContent = stripTags(post.node.content.encoded);
-		const sourceContent = post.node.content.encoded;
-		// const sourceContentDecoded = he.decode(sourceContent);
-		const sourceContentDecoded = sourceContent;
+		const sourceContent = stripTags(post.node.content.encoded);
+		const sourceContentDecoded = he.decode(sourceContent);
+		// const sourceContentDecoded = sourceContent;
 		return {
 			id: sourceID,
 			source: "Patrick Morrissey",
@@ -200,10 +188,9 @@ function IndexPage({ data }) {
 		const sourceID = post.node.id;
 		const sourceTitle = stripTags(post.node.title);
 		const sourceLink = post.node.link;
-		// const sourceContent = stripTags(post.node.content.encoded);
-		const sourceContent = post.node.content.encoded;
-		// const sourceContentDecoded = he.decode(sourceContent);
-		const sourceContentDecoded = sourceContent;
+		const sourceContent = stripTags(post.node.content.encoded);
+		const sourceContentDecoded = he.decode(sourceContent);
+		// const sourceContentDecoded = sourceContent;
 		return {
 			id: sourceID,
 			source: "Kentucky Theater",
@@ -216,10 +203,9 @@ function IndexPage({ data }) {
 		const sourceID = post.node.id;
 		const sourceTitle = stripTags(post.node.title);
 		const sourceLink = post.node.link;
-		// const sourceContent = stripTags(post.node.content.encoded);
-		const sourceContent = post.node.content.encoded;
-		// const sourceContentDecoded = he.decode(sourceContent);
-		const sourceContentDecoded = sourceContent;
+		const sourceContent = stripTags(post.node.content.encoded);
+		const sourceContentDecoded = he.decode(sourceContent);
+		// const sourceContentDecoded = sourceContent;
 		return {
 			id: sourceID,
 			source: "High Snobiety",
@@ -232,10 +218,9 @@ function IndexPage({ data }) {
 		const sourceID = post.node.id;
 		const sourceTitle = stripTags(post.node.title);
 		const sourceLink = post.node.link;
-		// const sourceContent = stripTags(post.node.content);
-		const sourceContent = post.node.content;
-		// const sourceContentDecoded = he.decode(sourceContent);
-		const sourceContentDecoded = sourceContent;
+		const sourceContent = stripTags(post.node.content);
+		const sourceContentDecoded = he.decode(sourceContent);
+		// const sourceContentDecoded = sourceContent;
 		return {
 			id: sourceID,
 			source: "AI Weirdness",
@@ -248,10 +233,9 @@ function IndexPage({ data }) {
 		const sourceID = post.node.id;
 		const sourceTitle = stripTags(post.node.title);
 		const sourceLink = post.node.link;
-		// const sourceContent = stripTags(post.node.content);
-		const sourceContent = post.node.content;
-		// const sourceContentDecoded = he.decode(sourceContent);
-		const sourceContentDecoded = sourceContent;
+		const sourceContent = stripTags(post.node.content);
+		const sourceContentDecoded = he.decode(sourceContent);
+		// const sourceContentDecoded = sourceContent;
 		return {
 			id: sourceID,
 			source: "Creative Applications",
@@ -264,10 +248,9 @@ function IndexPage({ data }) {
 		const sourceID = post.node.id;
 		const sourceTitle = stripTags(post.node.title);
 		const sourceLink = post.node.link;
-		// const sourceContent = stripTags(post.node.content);
-		const sourceContent = post.node.content;
-		// const sourceContentDecoded = he.decode(sourceContent);
-		const sourceContentDecoded = sourceContent;
+		const sourceContent = stripTags(post.node.content);
+		const sourceContentDecoded = he.decode(sourceContent);
+		// const sourceContentDecoded = sourceContent;
 		return {
 			id: sourceID,
 			source: "Pitchfork",
@@ -280,10 +263,9 @@ function IndexPage({ data }) {
 		const sourceID = post.node.id;
 		const sourceTitle = stripTags(post.node.title);
 		const sourceLink = post.node.link;
-		// const sourceContent = stripTags(post.node.content.encoded);
-		const sourceContent = post.node.content.encoded;
-		// const sourceContentDecoded = he.decode(sourceContent);
-		const sourceContentDecoded = sourceContent;
+		const sourceContent = stripTags(post.node.content.encoded);
+		const sourceContentDecoded = he.decode(sourceContent);
+		// const sourceContentDecoded = sourceContent;
 		return {
 			id: sourceID,
 			source: "Stereogum",
@@ -296,10 +278,9 @@ function IndexPage({ data }) {
 		const sourceID = post.node.id;
 		const sourceTitle = stripTags(post.node.title);
 		const sourceLink = post.node.link;
-		// const sourceContent = stripTags(post.node.content.encoded);
-		const sourceContent = post.node.content.encoded;
-		// const sourceContentDecoded = he.decode(sourceContent);
-		const sourceContentDecoded = sourceContent;
+		const sourceContent = stripTags(post.node.content.encoded);
+		const sourceContentDecoded = he.decode(sourceContent);
+		// const sourceContentDecoded = sourceContent;
 		return {
 			id: sourceID,
 			source: "Ars Technica",
@@ -312,10 +293,9 @@ function IndexPage({ data }) {
 		const sourceID = post.node.id;
 		const sourceTitle = stripTags(post.node.title);
 		const sourceLink = post.node.link;
-		// const sourceContent = stripTags(post.node.content.encoded);
-		const sourceContent = post.node.content.encoded;
-		// const sourceContentDecoded = he.decode(sourceContent);
-		const sourceContentDecoded = sourceContent;
+		const sourceContent = stripTags(post.node.content.encoded);
+		const sourceContentDecoded = he.decode(sourceContent);
+		// const sourceContentDecoded = sourceContent;
 		return {
 			id: sourceID,
 			source: "Tech Crunch",
@@ -328,10 +308,9 @@ function IndexPage({ data }) {
 		const sourceID = post.node.id;
 		const sourceTitle = stripTags(post.node.title);
 		const sourceLink = post.node.link;
-		// const sourceContent = stripTags(post.node.content);
-		const sourceContent = post.node.content;
-		// const sourceContentDecoded = he.decode(sourceContent);
-		const sourceContentDecoded = sourceContent;
+		const sourceContent = stripTags(post.node.content);
+		const sourceContentDecoded = he.decode(sourceContent);
+		// const sourceContentDecoded = sourceContent;
 		return {
 			id: sourceID,
 			source: "CoLabs",
@@ -344,10 +323,9 @@ function IndexPage({ data }) {
 		const sourceID = post.node.id;
 		const sourceTitle = stripTags(post.node.title);
 		const sourceLink = post.node.link;
-		// const sourceContent = stripTags(post.node.content.encoded);
-		const sourceContent = post.node.content.encoded;
-		// const sourceContentDecoded = he.decode(sourceContent);
-		const sourceContentDecoded = sourceContent;
+		const sourceContent = stripTags(post.node.content.encoded);
+		const sourceContentDecoded = he.decode(sourceContent);
+		// const sourceContentDecoded = sourceContent;
 		return {
 			id: sourceID,
 			source: "Codrops",
@@ -360,10 +338,9 @@ function IndexPage({ data }) {
 		const sourceID = post.node.id;
 		const sourceTitle = stripTags(post.node.title);
 		const sourceLink = post.node.link;
-		// const sourceContent = stripTags(post.node.content.encoded);
-		const sourceContent = post.node.content.encoded;
-		// const sourceContentDecoded = he.decode(sourceContent);
-		const sourceContentDecoded = sourceContent;
+		const sourceContent = stripTags(post.node.content.encoded);
+		const sourceContentDecoded = he.decode(sourceContent);
+		// const sourceContentDecoded = sourceContent;
 		return {
 			id: sourceID,
 			source: "CSS Tricks",
