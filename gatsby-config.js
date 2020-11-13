@@ -63,13 +63,6 @@ module.exports = {
     {
       resolve: `gatsby-source-rss-feed`,
       options: {
-        url: `http://www.entagma.com/feed/`,
-        name: `Entagma`,
-      }
-    },
-    {
-      resolve: `gatsby-source-rss-feed`,
-      options: {
         url: `http://pitchfork.com/rss/news/`,
         name: `Pitchfork`,
       }

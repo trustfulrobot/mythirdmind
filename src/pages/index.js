@@ -2,6 +2,7 @@ import React, { useState} from "react";
 import { graphql } from "gatsby";
 import { stripTags, slice, words } from "voca";
 import { Chance } from "chance";
+// import he from "he";
 
 export const feedPatrickMorrissey = graphql`
 	{
@@ -183,8 +184,10 @@ function IndexPage({ data }) {
 		const sourceID = post.node.id;
 		const sourceTitle = stripTags(post.node.title);
 		const sourceLink = post.node.link;
-		const sourceContent = stripTags(post.node.content.encoded);
-		const sourceContentDecoded = decodeHTML(sourceContent);
+		// const sourceContent = stripTags(post.node.content.encoded);
+		const sourceContent = post.node.content.encoded;
+		// const sourceContentDecoded = he.decode(sourceContent);
+		const sourceContentDecoded = sourceContent;
 		return {
 			id: sourceID,
 			source: "Patrick Morrissey",
@@ -197,8 +200,10 @@ function IndexPage({ data }) {
 		const sourceID = post.node.id;
 		const sourceTitle = stripTags(post.node.title);
 		const sourceLink = post.node.link;
-		const sourceContent = stripTags(post.node.content.encoded);
-		const sourceContentDecoded = decodeHTML(sourceContent);
+		// const sourceContent = stripTags(post.node.content.encoded);
+		const sourceContent = post.node.content.encoded;
+		// const sourceContentDecoded = he.decode(sourceContent);
+		const sourceContentDecoded = sourceContent;
 		return {
 			id: sourceID,
 			source: "Kentucky Theater",
@@ -211,8 +216,10 @@ function IndexPage({ data }) {
 		const sourceID = post.node.id;
 		const sourceTitle = stripTags(post.node.title);
 		const sourceLink = post.node.link;
-		const sourceContent = stripTags(post.node.content.encoded);
-		const sourceContentDecoded = decodeHTML(sourceContent);
+		// const sourceContent = stripTags(post.node.content.encoded);
+		const sourceContent = post.node.content.encoded;
+		// const sourceContentDecoded = he.decode(sourceContent);
+		const sourceContentDecoded = sourceContent;
 		return {
 			id: sourceID,
 			source: "High Snobiety",
@@ -225,8 +232,10 @@ function IndexPage({ data }) {
 		const sourceID = post.node.id;
 		const sourceTitle = stripTags(post.node.title);
 		const sourceLink = post.node.link;
-		const sourceContent = stripTags(post.node.content);
-		const sourceContentDecoded = decodeHTML(sourceContent);
+		// const sourceContent = stripTags(post.node.content);
+		const sourceContent = post.node.content;
+		// const sourceContentDecoded = he.decode(sourceContent);
+		const sourceContentDecoded = sourceContent;
 		return {
 			id: sourceID,
 			source: "AI Weirdness",
@@ -239,25 +248,13 @@ function IndexPage({ data }) {
 		const sourceID = post.node.id;
 		const sourceTitle = stripTags(post.node.title);
 		const sourceLink = post.node.link;
-		const sourceContent = stripTags(post.node.content);
-		const sourceContentDecoded = decodeHTML(sourceContent);
+		// const sourceContent = stripTags(post.node.content);
+		const sourceContent = post.node.content;
+		// const sourceContentDecoded = he.decode(sourceContent);
+		const sourceContentDecoded = sourceContent;
 		return {
 			id: sourceID,
 			source: "Creative Applications",
-			title: sourceTitle,
-			content: sourceContentDecoded,
-			link: sourceLink
-		}
-	});
-	const source_Entagma = data.allFeedEntagma.edges.map(function(post, index){
-		const sourceID = post.node.id;
-		const sourceTitle = stripTags(post.node.title);
-		const sourceLink = post.node.link;
-		const sourceContent = stripTags(post.node.content);
-		const sourceContentDecoded = decodeHTML(sourceContent);
-		return {
-			id: sourceID,
-			source: "Entagma",
 			title: sourceTitle,
 			content: sourceContentDecoded,
 			link: sourceLink
@@ -267,8 +264,10 @@ function IndexPage({ data }) {
 		const sourceID = post.node.id;
 		const sourceTitle = stripTags(post.node.title);
 		const sourceLink = post.node.link;
-		const sourceContent = stripTags(post.node.content);
-		const sourceContentDecoded = decodeHTML(sourceContent);
+		// const sourceContent = stripTags(post.node.content);
+		const sourceContent = post.node.content;
+		// const sourceContentDecoded = he.decode(sourceContent);
+		const sourceContentDecoded = sourceContent;
 		return {
 			id: sourceID,
 			source: "Pitchfork",
@@ -281,8 +280,10 @@ function IndexPage({ data }) {
 		const sourceID = post.node.id;
 		const sourceTitle = stripTags(post.node.title);
 		const sourceLink = post.node.link;
-		const sourceContent = stripTags(post.node.content.encoded);
-		const sourceContentDecoded = decodeHTML(sourceContent);
+		// const sourceContent = stripTags(post.node.content.encoded);
+		const sourceContent = post.node.content.encoded;
+		// const sourceContentDecoded = he.decode(sourceContent);
+		const sourceContentDecoded = sourceContent;
 		return {
 			id: sourceID,
 			source: "Stereogum",
@@ -295,8 +296,10 @@ function IndexPage({ data }) {
 		const sourceID = post.node.id;
 		const sourceTitle = stripTags(post.node.title);
 		const sourceLink = post.node.link;
-		const sourceContent = stripTags(post.node.content.encoded);
-		const sourceContentDecoded = decodeHTML(sourceContent);
+		// const sourceContent = stripTags(post.node.content.encoded);
+		const sourceContent = post.node.content.encoded;
+		// const sourceContentDecoded = he.decode(sourceContent);
+		const sourceContentDecoded = sourceContent;
 		return {
 			id: sourceID,
 			source: "Ars Technica",
@@ -309,8 +312,10 @@ function IndexPage({ data }) {
 		const sourceID = post.node.id;
 		const sourceTitle = stripTags(post.node.title);
 		const sourceLink = post.node.link;
-		const sourceContent = stripTags(post.node.content.encoded);
-		const sourceContentDecoded = decodeHTML(sourceContent);
+		// const sourceContent = stripTags(post.node.content.encoded);
+		const sourceContent = post.node.content.encoded;
+		// const sourceContentDecoded = he.decode(sourceContent);
+		const sourceContentDecoded = sourceContent;
 		return {
 			id: sourceID,
 			source: "Tech Crunch",
@@ -323,8 +328,10 @@ function IndexPage({ data }) {
 		const sourceID = post.node.id;
 		const sourceTitle = stripTags(post.node.title);
 		const sourceLink = post.node.link;
-		const sourceContent = stripTags(post.node.content);
-		const sourceContentDecoded = decodeHTML(sourceContent);
+		// const sourceContent = stripTags(post.node.content);
+		const sourceContent = post.node.content;
+		// const sourceContentDecoded = he.decode(sourceContent);
+		const sourceContentDecoded = sourceContent;
 		return {
 			id: sourceID,
 			source: "CoLabs",
@@ -337,8 +344,10 @@ function IndexPage({ data }) {
 		const sourceID = post.node.id;
 		const sourceTitle = stripTags(post.node.title);
 		const sourceLink = post.node.link;
-		const sourceContent = stripTags(post.node.content.encoded);
-		const sourceContentDecoded = decodeHTML(sourceContent);
+		// const sourceContent = stripTags(post.node.content.encoded);
+		const sourceContent = post.node.content.encoded;
+		// const sourceContentDecoded = he.decode(sourceContent);
+		const sourceContentDecoded = sourceContent;
 		return {
 			id: sourceID,
 			source: "Codrops",
@@ -351,8 +360,10 @@ function IndexPage({ data }) {
 		const sourceID = post.node.id;
 		const sourceTitle = stripTags(post.node.title);
 		const sourceLink = post.node.link;
-		const sourceContent = stripTags(post.node.content.encoded);
-		const sourceContentDecoded = decodeHTML(sourceContent);
+		// const sourceContent = stripTags(post.node.content.encoded);
+		const sourceContent = post.node.content.encoded;
+		// const sourceContentDecoded = he.decode(sourceContent);
+		const sourceContentDecoded = sourceContent;
 		return {
 			id: sourceID,
 			source: "CSS Tricks",
@@ -370,7 +381,6 @@ function IndexPage({ data }) {
 	Array.from(source_HighSnobiety).forEach(addSource);
 	Array.from(source_AiWeirdness).forEach(addSource);
 	Array.from(source_CreativeApplications).forEach(addSource);
-	Array.from(source_Entagma).forEach(addSource);
 	Array.from(source_Pitchfork).forEach(addSource);
 	Array.from(source_Stereogum).forEach(addSource);
 	Array.from(source_ArsTechnica).forEach(addSource);
@@ -404,7 +414,7 @@ function IndexPage({ data }) {
 					const fragmentIndex = chance.integer({min: 0, max: currentSourceLen});
 					let fragment = slice(currentSourceContent, fragmentIndex, fragmentIndex + fragmentLen);	
 					// replace line breaks with a space
-					fragment = fragment.replace(/(\r\n|\n|\r)/gm," ");
+					// fragment = fragment.replace(/(\r\n|\n|\r)/gm," ");
 					const fragmentWords = words(fragment);
 					// remove first and last words bc they may be partial
 					fragmentWords.shift();
