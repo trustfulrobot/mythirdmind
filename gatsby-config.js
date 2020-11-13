@@ -49,13 +49,6 @@ module.exports = {
     {
       resolve: `gatsby-source-rss-feed`,
       options: {
-        url: `http://feeds.boingboing.net/boingboing/iBag`,
-        name: `BoingBoing`,
-      }
-    },
-    {
-      resolve: `gatsby-source-rss-feed`,
-      options: {
         url: `https://aiweirdness.com/rss`,
         name: `AiWeirdness`,
       }
