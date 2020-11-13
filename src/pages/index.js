@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState} from "react";
 import { graphql } from "gatsby";
 import { stripTags, slice, words } from "voca";
 import { Chance } from "chance";
@@ -8,9 +8,9 @@ export const feedPatrickMorrissey = graphql`
 		allFeedPatrickMorrissey(limit: 25) {
 	    edges {
 	      node {
-	        content {
-	          encoded
-	        }
+	      	content {
+	      		encoded
+	      	}
 	        id
 	        link
 	        title
@@ -32,19 +32,6 @@ export const feedPatrickMorrissey = graphql`
 	  },
 
 		allFeedHighSnobiety(limit: 25) {
-	    edges {
-	      node {
-	        content {
-	          encoded
-	        }
-	        id
-	        link
-	        title
-	      }
-	    }
-	  },
-
-		allFeedBoingBoing(limit: 25) {
 	    edges {
 	      node {
 	        content {
@@ -187,6 +174,8 @@ function decodeHTML(str) {
 
 function IndexPage({ data }) {
 
+	const [count, setCount] = useState(500);
+
 	const chance = new Chance();
 	let sources = [];
 
@@ -227,20 +216,6 @@ function IndexPage({ data }) {
 		return {
 			id: sourceID,
 			source: "High Snobiety",
-			title: sourceTitle,
-			content: sourceContentDecoded,
-			link: sourceLink
-		}
-	});
-	const source_BoingBoing = data.allFeedBoingBoing.edges.map(function(post, index){
-		const sourceID = post.node.id;
-		const sourceTitle = stripTags(post.node.title);
-		const sourceLink = post.node.link;
-		const sourceContent = stripTags(post.node.content.encoded);
-		const sourceContentDecoded = decodeHTML(sourceContent);
-		return {
-			id: sourceID,
-			source: "Boing Boing",
 			title: sourceTitle,
 			content: sourceContentDecoded,
 			link: sourceLink
@@ -393,7 +368,6 @@ function IndexPage({ data }) {
 	Array.from(source_PatrickMorrissey).forEach(addSource);
 	Array.from(source_KentuckyTheater).forEach(addSource);
 	Array.from(source_HighSnobiety).forEach(addSource);
-	Array.from(source_BoingBoing).forEach(addSource);
 	Array.from(source_AiWeirdness).forEach(addSource);
 	Array.from(source_CreativeApplications).forEach(addSource);
 	Array.from(source_Entagma).forEach(addSource);
@@ -430,7 +404,7 @@ function IndexPage({ data }) {
 					const fragmentIndex = chance.integer({min: 0, max: currentSourceLen});
 					let fragment = slice(currentSourceContent, fragmentIndex, fragmentIndex + fragmentLen);	
 					// replace line breaks with a space
-					// fragment = fragment.replace(/(\r\n|\n|\r)/gm," ");
+					fragment = fragment.replace(/(\r\n|\n|\r)/gm," ");
 					const fragmentWords = words(fragment);
 					// remove first and last words bc they may be partial
 					fragmentWords.shift();
@@ -447,6 +421,7 @@ function IndexPage({ data }) {
 					cutupContent = cutupContent + cutupSource.content + " ";
 				})
 				cutupContent = cutupContent.trim();
+				console.log(cutupContent);
 				// cutupDiv.innerHTML = cutupContent;
 				// document.getElementById('cutups').appendChild(cutupDiv);
 			}
